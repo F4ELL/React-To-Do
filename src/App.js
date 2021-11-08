@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import { Inputbar, Button, List } from './components';
+import { GlobalStyle } from './components/GlobalStyles/GlobalStyles';
 
 
 function App() {
@@ -17,7 +18,8 @@ function App() {
 
   return (
     <>
-      <Inputbar handleTextTask={setTask}/>
+      <GlobalStyle />
+      <Inputbar handleTextTask={setTask} placeholder="Ex: Tirar o lixo"/>
       <Button textButton="Adicionar tarefa" handleButton={() => createTask()} />
       <List allTasks={listTasks} />      
     </>
