@@ -8,14 +8,18 @@ function App() {
   const [ listTasks, setListTasks ] = useState([]);
 
   const createTask = () => {
-    setListTasks(listTasks => [...listTasks, {id: listTasks.length, title: task, isCompleted: false}]);
+    if(task === ''){
+      alert("Digite uma tarefa!");
+    } else{
+      setListTasks(listTasks => [...listTasks, {id: listTasks.length, title: task, isCompleted: false}]);
+    }
   }
 
   return (
     <>
       <Inputbar handleTextTask={setTask}/>
       <Button textButton="Adicionar tarefa" handleButton={() => createTask()} />
-      <List allTasks={listTasks}/>
+      <List allTasks={listTasks} />      
     </>
   );
 }

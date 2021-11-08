@@ -1,4 +1,6 @@
 import React from 'react'
+import Check from '../Check';
+import Delete from '../Delete';
 import { StyledList } from './StyledList';
 
 export const List = ({ allTasks }) => {
@@ -8,7 +10,11 @@ export const List = ({ allTasks }) => {
                 {allTasks.map((task, index) => (
                     <>
                     {!task.isCompleted &&
-                        <li key={index}>{task.title}</li>
+                        <>
+                            <Delete />
+                            <li key={index}>{task.title}</li>
+                            <Check />
+                        </>
                     }
                     </>
                 ))}
