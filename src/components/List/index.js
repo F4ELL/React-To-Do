@@ -4,6 +4,13 @@ import Delete from '../Delete';
 import { StyledList } from './StyledList';
 
 export const List = ({ allTasks }) => {
+    
+    const deleteTask = () => {
+        const listAtt = allTasks.filter((id)=>{
+            return id !== allTasks.id;
+        });
+    }
+    
     return (
         <>
             <StyledList>
