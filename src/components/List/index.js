@@ -1,29 +1,34 @@
 import React from 'react'
 import Check from '../Check';
-import Delete from '../Delete';
+import { Button } from '../Button'
 import { StyledList } from './StyledList';
 
-export const List = ({ allTasks }) => {
+export const List = ({ allTasks, updateTasks }) => {
     
-    const deleteTask = () => {
-        const listAtt = allTasks.filter((id)=>{
-            return id !== allTasks.id;
-        });
+    const deleteTask = (id) => {
+        
+        const isDifference = (item) => {
+            return id !== item.id;
+        }
+
+        const listAtt = allTasks.filter(isDifference);
+        updateTasks(listAtt);
+       
     }
     
     return (
         <>
             <StyledList>
                 {allTasks.map((task, index) => (
-                    <>
+                    <div key={index}>
                     {!task.isCompleted &&
                         <>
-                            <Delete />
-                            <li key={index}>{task.title}</li>
+                            <Button handleButton={()=> deleteTask(task.id)}>X</Button>
+                            <li>{task.title}</li>
                             <Check />
                         </>
                     }
-                    </>
+                    </div>
                 ))}
             </StyledList> 
         </>
