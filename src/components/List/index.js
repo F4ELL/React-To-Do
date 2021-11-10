@@ -12,6 +12,22 @@ export const List = ({ allTasks, updateTasks }) => {
         const listAtt = allTasks.filter(isDifference);
         updateTasks(listAtt);       
     }
+
+    const completeTask = (id) => {
+
+        const taskCopy = allTasks;
+        const index = allTasks.findIndex((i)=> i.id == id);
+        taskCopy[index].isCompleted = true;
+        
+        updateTasks(taskCopy);
+
+        const ifCompleted = (item) => {
+            return item.isCompleted === false;
+        }
+
+        const listAtt = allTasks.filter(ifCompleted);
+        updateTasks(listAtt);
+    }
     
     return (
         <>
@@ -22,7 +38,7 @@ export const List = ({ allTasks, updateTasks }) => {
                         <>
                             <Button handleButton={()=> deleteTask(task.id)} buttonColor={'#FF5A5A'}>X</Button>
                             <li>{task.title}</li>
-                            <Button buttonColor={'#5AFF74'}/>
+                            <Button buttonColor={'#5AFF74'} handleButton={()=> completeTask(task.id)}/>
                         </>
                     }
                     </div>

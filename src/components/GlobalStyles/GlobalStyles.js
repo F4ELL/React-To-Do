@@ -1,4 +1,5 @@
 import { createGlobalStyle } from 'styled-components';
+import styled from 'styled-components';
 
 export const GlobalStyle = createGlobalStyle`
     *{
@@ -10,4 +11,8 @@ export const GlobalStyle = createGlobalStyle`
     body{
         background-color: #F4F4F4;
     }
+`;
+
+export const StyledFlex = styled.div`
+    display: flex;
 `;

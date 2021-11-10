@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { Inputbar, Button, List } from './components';
-import { GlobalStyle } from './components/GlobalStyles/GlobalStyles';
+import { GlobalStyle, StyledFlex } from './components/GlobalStyles/GlobalStyles';
+
 
 
 function App() {
@@ -20,8 +21,10 @@ function App() {
   return (
     <>
       <GlobalStyle />
+      <StyledFlex>
       <Inputbar handleTextTask={setTask} placeholder="Ex: Tirar o lixo" value={task}/>
       <Button textButton="Adicionar tarefa" handleButton={() => createTask()} buttonColor={'#FF5ADB'}/>
+      </StyledFlex>
       <List allTasks={listTasks} updateTasks={setListTasks}/>      
     </>
   );
