@@ -14,12 +14,13 @@ function App() {
     } else{      
       setListTasks(listTasks => [...listTasks, {id: listTasks.length, title: task, isCompleted: false}]);
     }
+    setTask('');
   }
 
   return (
     <>
       <GlobalStyle />
-      <Inputbar handleTextTask={setTask} placeholder="Ex: Tirar o lixo"/>
+      <Inputbar handleTextTask={setTask} placeholder="Ex: Tirar o lixo" value={task}/>
       <Button textButton="Adicionar tarefa" handleButton={() => createTask()} />
       <List allTasks={listTasks} updateTasks={setListTasks}/>      
     </>

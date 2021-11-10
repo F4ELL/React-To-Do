@@ -1,11 +1,11 @@
 import React from 'react'
-import { Input } from './StyledInput';
+import { StyledInput } from './StyledInput';
 
-export const Inputbar = ({ handleTextTask, placeholder }) => { 
+export const Inputbar = ({ handleTextTask, placeholder, value }) => { 
     
     return (
         <>
-            <Input onChange={({ target }) => handleTextTask(target.value)} placeholder={placeholder}/>
+            <StyledInput onChange={({ target }) => handleTextTask(target.value)} placeholder={placeholder} value={value}/>
         </>
     )
 }
