@@ -1,5 +1,4 @@
 import React from 'react'
-import Check from '../Check';
 import { Button } from '../Button'
 import { StyledList } from './StyledList';
 
@@ -10,10 +9,8 @@ export const List = ({ allTasks, updateTasks }) => {
         const isDifference = (item) => {
             return id !== item.id;
         }
-
         const listAtt = allTasks.filter(isDifference);
-        updateTasks(listAtt);
-       
+        updateTasks(listAtt);       
     }
     
     return (
@@ -23,9 +20,9 @@ export const List = ({ allTasks, updateTasks }) => {
                     <div key={index}>
                     {!task.isCompleted &&
                         <>
-                            <Button handleButton={()=> deleteTask(task.id)}>X</Button>
+                            <Button handleButton={()=> deleteTask(task.id)} buttonColor={'#FF5A5A'}>X</Button>
                             <li>{task.title}</li>
-                            <Check />
+                            <Button buttonColor={'#5AFF74'}/>
                         </>
                     }
                     </div>

@@ -21,7 +21,7 @@ function App() {
     <>
       <GlobalStyle />
       <Inputbar handleTextTask={setTask} placeholder="Ex: Tirar o lixo" value={task}/>
-      <Button textButton="Adicionar tarefa" handleButton={() => createTask()} />
+      <Button textButton="Adicionar tarefa" handleButton={() => createTask()} buttonColor={'#FF5ADB'}/>
       <List allTasks={listTasks} updateTasks={setListTasks}/>      
     </>
   );
