@@ -42,7 +42,7 @@ export const List = ({ allTasks, updateTasks }) => {
                                         <img className='small' src={Plus} alt='Deletar Tarefa' />
                                     </Button> 
                                 </div>
-                                <li>{task.isCompleted}</li>
+                                <li>{task.title}</li>
                                     <Button buttonColor={'#5AFF74'} buttonWidth={'60px'} buttonPadding={'0'} buttonHeight={'50px'} buttonColorHover={'#30ff51'} handleButton={()=> completeTask(task.id)}>
                                         <img className='bigger' src={Vector} alt='Tarefa Concluída' />
                                     </Button>
