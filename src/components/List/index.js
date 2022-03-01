@@ -20,7 +20,7 @@ export const List = ({ allTasks, updateTasks }) => {
 
     const completeTask = (id) => {
 
-        const taskCopy = allTasks;
+        const taskCopy = [...allTasks];
         const index = allTasks.findIndex((i)=> i.id === id);
         taskCopy[index].isCompleted = true;
         
